@@ -1,5 +1,4 @@
 """Test the pypdf.generic._files module."""
-
 import datetime
 import shutil
 import subprocess
@@ -561,7 +560,7 @@ def test_embedded_file__get_insertion_index() -> None:
         ArrayObject([
             TextStringObject("aaa.txt"), NullObject(),
             TextStringObject("test.txt"), NullObject(),
-            TextStringObject("zzz.txt"), NullObject(),
+            TextStringObject("zzz.txt"), NullObject()
         ]),
         "test.txt"
     ) == 4
@@ -582,11 +581,12 @@ def test_embedded_file__get_insertion_index() -> None:
 
     # Special characters.
     assert EmbeddedFile._get_insertion_index(
-            ArrayObject([TextStringObject("café"), NullObject()]),
-            "cafe"
+        ArrayObject([TextStringObject("café"), NullObject()]),
+        "cafe"
     ) == 0
     assert EmbeddedFile._get_insertion_index(
-        ArrayObject([TextStringObject("Tun"), NullObject()]), "Tür"
+        ArrayObject([TextStringObject("Tun"), NullObject()]),
+        "Tür"
     ) == 2
 
 
@@ -612,5 +612,5 @@ def test_embedded_file__order() -> None:
         "abc.txt", attachment2.pdf_object.indirect_reference,
         "test.txt", attachment1.pdf_object.indirect_reference,
         "test.txt", attachment4.pdf_object.indirect_reference,
-        "xyz.txt", attachment3.pdf_object.indirect_reference
+        "xyz.txt", attachment3.pdf_object.indirect_reference,
     ]
