@@ -352,7 +352,7 @@ def test_logger_warning(caplog):
     line = "some line broken"
     error = ""
     logger_warning(message, source=__name__, line=line, error=error)
-    assert "Skipping broken line some line broken: error" in caplog.text
+    assert "Skipping broken line some line broken : error" in caplog.text
 
 
 def test_rename_kwargs():

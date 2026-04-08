@@ -449,7 +449,7 @@ def logger_error(message: str, *, source: str, **values: Any) -> None:
     logging.getLogger(source).error(message, values)
 
 
-def logger_warning(message: str, *, source: str, **values: Any) -> None:
+def logger_warning(message: str, *, source: str,**values: Any) -> None:
     """
     Use this instead of logger.warning directly.
 
@@ -465,7 +465,7 @@ def logger_warning(message: str, *, source: str, **values: Any) -> None:
       pypdf could apply a robustness fix to still read it. This applies mainly
       to strict=False mode.
     """
-    logging.getLogger(source).warning(message, values)
+    logging.getLogger(source).warning(message,values)
 
 
 def rename_kwargs(
